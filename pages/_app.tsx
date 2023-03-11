@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 
+import '../app/assets/styles/globals.scss'
 import MainProvider from '../app/providers/MainProvider'
-import '../styles/globals.css'
 
 function App({ Component, pageProps }: AppProps) {
 	return (

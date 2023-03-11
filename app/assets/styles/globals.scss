@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'react-redux-toastr/src/styles/index';
 
 * {
   box-sizing: border-box;
