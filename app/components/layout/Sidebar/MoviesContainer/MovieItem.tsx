@@ -27,7 +27,7 @@ const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 				<div className={styles.title}>{movie.title}</div>
 				<div className={styles.genres}>
 					{movie.genres.map((genre, idx) => (
-						<Link href={getGenresUrl(genre.slug)}>
+						<Link key={idx} href={getGenresUrl(genre.slug)}>
 							{getGenresListEach(idx, movie.genres.length, genre.name)}
 						</Link>
 					))}
