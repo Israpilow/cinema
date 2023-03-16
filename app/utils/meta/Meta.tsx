@@ -8,12 +8,7 @@ import { onlyText } from '../string/clearText'
 
 import { ISeo } from './meta.interface'
 
-const Meta: FC<ISeo & { children: JSX.Element }> = ({
-	title,
-	description,
-	image,
-	children,
-}) => {
+const Meta: FC<ISeo> = ({ title, description, image, children }) => {
 	const { asPath } = useRouter()
 	const currentUrl = `${process.env.APP_URL}${asPath}`
 	return (
