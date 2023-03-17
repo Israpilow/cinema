@@ -4,12 +4,12 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { useQuery } from 'react-query'
 
-import { getMoviesUrl } from '../../../../config/api.config'
-import { MovieService } from '../../../../services/movie.service'
-import { IMovie } from '../../../../shared/types/movies.types'
-import SkeletonLoader from '../../../ui/SkeletonLoader'
-import SubHeading from '../../../ui/heading/SubHeading'
-import styles from '../Admin.module.scss'
+import { getMoviesUrl } from '../../../../../config/api.config'
+import { MovieService } from '../../../../../services/movie.service'
+import { IMovie } from '../../../../../shared/types/movies.types'
+import SkeletonLoader from '../../../../ui/SkeletonLoader'
+import SubHeading from '../../../../ui/heading/SubHeading'
+import styles from '../../Admin.module.scss'
 
 const PopularUsers: FC = () => {
 	const { isLoading, data: movie } = useQuery(

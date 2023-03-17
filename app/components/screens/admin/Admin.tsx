@@ -4,7 +4,7 @@ import Meta from '../../../utils/meta/Meta'
 import AdminNavigation from '../../ui/admin-navigation/AdminNavigation'
 import Heading from '../../ui/heading/Heading'
 
-import Statistics from './Statistics/Statistics'
+import Statistics from './home/Statistics/Statistics'
 
 const Admin: FC = () => {
 	return (

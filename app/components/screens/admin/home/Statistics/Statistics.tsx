@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import styles from '../Admin.module.scss'
+import styles from '../../Admin.module.scss'
 
 import CountUsers from './CountUsers'
 import PopularUsers from './PopularUsers'
