@@ -9,7 +9,11 @@ export const UserService = {
 		})
 	},
 
-	async deleteUser(_id: string) {
+	async create() {
+		return axios.post<string>(getUsersUrl('/'))
+	},
+
+	async delete(_id: string) {
 		return axios.delete<string>(getUsersUrl(`/${_id}`))
 	},
 }

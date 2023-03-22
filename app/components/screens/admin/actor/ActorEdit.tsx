@@ -61,17 +61,15 @@ const ActorEdit: FC = () => {
 								render={({
 									field: { value, onChange, name },
 									fieldState: { error },
-								}) => {
-									return (
-										<UploadField
-											onChange={onChange}
-											value={value}
-											error={error}
-											folder="actors"
-											placeholder="Photo"
-										/>
-									)
-								}}
+								}) => (
+									<UploadField
+										onChange={onChange}
+										value={value}
+										error={error}
+										folder="actors"
+										placeholder="Photo"
+									/>
+								)}
 								rules={{
 									required: 'Photo is required!',
 								}}

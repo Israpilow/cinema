@@ -108,7 +108,7 @@ module.exports = {
 			}),
 				addUtilities({
 					'.text-shadow': {
-						textShadow: '1px 1px rgba(0, 0, 0, 0.4',
+						textShadow: '1px 1px rgba(0, 0, 0, 0.4)',
 					},
 
 					'.outline-border-none': {

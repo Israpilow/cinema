@@ -9,13 +9,24 @@ import Heading from '../../../ui/heading/Heading'
 import { useUsers } from './useUsers'
 
 const UserList: FC = () => {
-	const { handleSearch, isLoading, searchTerm, data, deleteAsync } = useUsers()
+	const {
+		handleSearch,
+		isLoading,
+		searchTerm,
+		data,
+		deleteAsync,
+		createAsync,
+	} = useUsers()
 	return (
 		<Meta title="Users">
 			<AdminNavigation />
 			<Heading title="Users" />
 
-			<AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
+			<AdminHeader
+				handleSearch={handleSearch}
+				searchTerm={searchTerm}
+				onClick={createAsync}
+			/>
 			<AdminTable
 				isLoading={isLoading}
 				tableItems={data || []}
