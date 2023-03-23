@@ -4,10 +4,11 @@ import { CSSTransition } from 'react-transition-group'
 import SlideArrow from './SlideArrow/SlideArrow'
 import SlideItem from './SlideItem'
 import styles from './Slider.module.scss'
+import { ISlide } from './slider.interace'
 import { useSlider } from './useSlider'
 
 interface ISlider {
-	slides: ISlider[]
+	slides: ISlide[]
 	buttonTitle?: string
 }
 
