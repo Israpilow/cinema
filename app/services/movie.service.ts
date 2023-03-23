@@ -1,7 +1,8 @@
 import axios, { AxiosClassic } from '../api/interceptors'
 import { IMovieEditInput } from '../components/screens/admin/movie/movie-edit.interface'
-import { getMoviesUrl } from '../config/api.config'
-import { IMovie } from '../shared/types/movies.types'
+import { getGenresUrl, getMoviesUrl } from '../config/api.config'
+import { getMovieUrl } from '../config/url.config'
+import { IActor, IGenre, IMovie } from '../shared/types/movies.types'
 
 export const MovieService = {
 	async getAll(searchTerm?: string) {
@@ -14,6 +15,14 @@ export const MovieService = {
 			getMoviesUrl('/most-popular')
 		)
 		return movies
+	},
+	async getByGenres(genreIds: string[]) {
+		return await AxiosClassic.post<IMovie[]>(getMoviesUrl(`/by-genres`), {
+			genreIds,
+		})
+	},
+	async getByActor(actorId: string) {
+		return await AxiosClassic.get<IActor>(getMoviesUrl(`/by-actor/${actorId}`))
 	},
 	async getById(_id?: string) {
 		return await axios.get<IMovieEditInput>(getMoviesUrl(`/${_id}`))

@@ -1,13 +1,16 @@
 import axios, { AxiosClassic } from '../api/interceptors'
 import { IActorEditInput } from '../components/screens/admin/actor/actor-edit.interface'
 import { getActorsUrl, getGenresUrl } from '../config/api.config'
-import { IActor } from '../shared/types/movies.types'
+import { IActor, IGenre } from '../shared/types/movies.types'
 
 export const ActorService = {
 	async getAll(searchTerm?: string) {
 		return await AxiosClassic.get<IActor[]>(getActorsUrl(''), {
 			params: searchTerm ? { searchTerm } : {},
 		})
+	},
+	async getBySlug(slug: string) {
+		return await AxiosClassic.get<IActor>(getActorsUrl(`/by-slug/${slug}`))
 	},
 	async getById(_id?: string) {
 		return await axios.get<IActorEditInput>(getActorsUrl(`/${_id}`))

@@ -25,6 +25,7 @@
     "draftjs-to-html": "^0.9.1",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
+    "html-react-parser": "^3.0.13",
     "html-to-draftjs": "^1.5.0",
     "js-cookie": "^3.0.1",
     "next": "13.1.1",

@@ -4,8 +4,8 @@ import Home from '../app/components/screens/home/Home'
 import { IHome } from '../app/components/screens/home/home.interface'
 import { IGalleryItem } from '../app/components/ui/gallery/gallery.interface'
 import { ISlide } from '../app/components/ui/slider/slider.interace'
-import { getMoviesUrl } from '../app/config/api.config'
-import { getAdminUrl } from '../app/config/url.config'
+import { getActorsUrl, getMoviesUrl } from '../app/config/api.config'
+import { getActorUrl, getAdminUrl, getMovieUrl } from '../app/config/url.config'
 import { ActorService } from '../app/services/actor.service'
 import { MovieService } from '../app/services/movie.service'
 import { getGenresList } from '../app/utils/movie/getGenresListEach'
@@ -33,10 +33,10 @@ export const getStaticProps: GetStaticProps = async () => {
 
 		const trendingMovies: IGalleryItem[] = dataTrendingMovies
 			.slice(0, 3)
-			.map((actor) => ({
-				name: actor.title,
-				posterPath: actor.poster,
-				link: getAdminUrl(actor.slug),
+			.map((movie) => ({
+				name: movie.title,
+				posterPath: movie.poster,
+				link: getMovieUrl(movie.slug),
 			}))
 
 		const { data: dataActors } = await ActorService.getAll()
@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		const actors: IGalleryItem[] = dataActors.slice(0, 7).map((actor) => ({
 			name: actor.name,
 			posterPath: actor.photo,
-			link: getAdminUrl(actor.slug),
+			link: getActorUrl(actor.slug),
 			content: {
 				title: actor.name,
 				subTitle: `+${actor.countMovies} movies`,

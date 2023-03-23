@@ -9,6 +9,10 @@ export const GenreService = {
 			params: searchTerm ? { searchTerm } : {},
 		})
 	},
+
+	async getBySlug(slug: string) {
+		return await AxiosClassic.get<IGenre>(getGenresUrl(`/by-slug/${slug}`))
+	},
 	async getById(_id?: string) {
 		return await axios.get<IGenreEditInput>(getGenresUrl(`/${_id}`))
 	},
