@@ -21,6 +21,9 @@ export const MovieService = {
 			genreIds,
 		})
 	},
+	async getBySlug(slug: string) {
+		return await AxiosClassic.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`))
+	},
 	async getByActor(actorId: string) {
 		return await AxiosClassic.get<IActor>(getMoviesUrl(`/by-actor/${actorId}`))
 	},

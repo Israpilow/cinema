@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 
-const primary = '#E30b13'
+const primary = '#E30B13'
 
 module.exports = {
 	content: [
@@ -84,16 +84,18 @@ module.exports = {
 					backgroundColor: primary,
 					color: '#fff',
 					borderRadius: '0.65rem',
-					transition: 'background-color .3 easy-in-out',
+					transition: 'background-color .3s ease-in-out',
 					'&:hover': {
-						backgroundColor: 'ff00009',
+						backgroundColor: '#ff0009',
 					},
 				},
 
 				'.text-link': {
 					textUnderlineOffset: 4,
 					color: 'rgba(255, 255, 255, .9)',
-					transition: 'text-decoration-color .3 easy-in-out',
+					transition: 'text-decoration-color .3s ease-in-out',
+					textDecorationLine: 'underline',
+					textDecorationColor: 'rgba(255, 255, 255, 0.2)',
 					'&:hover': {
 						textDecorationColor: 'rgba(255, 255, 255, .9)',
 					},
