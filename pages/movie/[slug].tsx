@@ -10,7 +10,7 @@ import { IMovie } from '../../app/shared/types/movies.types'
 
 export interface IMoviePage {
 	similarMovie: IGalleryItem[]
-	movie: IMovie | undefined
+	movie: IMovie
 }
 
 const MoviePage: NextPage<IMoviePage> = ({ similarMovie, movie }) => {

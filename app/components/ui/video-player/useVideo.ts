@@ -67,10 +67,7 @@ export const useVideo = () => {
 		e: React.MouseEvent<HTMLDivElement, MouseEvent>
 	) => {
 		const { width, left } = e.currentTarget.getBoundingClientRect()
-
 		const clickedPos = (e.clientX - left) / width
-		console.log((e.clientX - left) / width)
-		console.log(width / (e.clientX - left))
 		seekToPosition(clickedPos)
 	}
 
@@ -108,6 +105,7 @@ export const useVideo = () => {
 		video.addEventListener('loadeddata', updateBuffer)
 		video.addEventListener('progress', updateBuffer)
 		video.addEventListener('timeupdate', updateBuffer)
+
 		return () => {
 			video.removeEventListener('loadeddata', updateBuffer)
 			video.removeEventListener('progress', updateBuffer)

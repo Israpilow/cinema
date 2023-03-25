@@ -40,7 +40,7 @@ module.exports = {
 				layout: '0.8rem',
 			},
 			transitionTimingFunction: {
-				DEFAULT: 'easy-in-out',
+				DEFAULT: 'ease-in-out',
 			},
 			transitionDuration: {
 				DEFAULT: '200ms',
@@ -55,7 +55,7 @@ module.exports = {
 					from: { opacity: 0 },
 					to: { opacity: 1 },
 				},
-				scale: {
+				scaleIn: {
 					'0%': {
 						opacity: 0,
 						transform: 'scale(0.9)',
@@ -69,10 +69,10 @@ module.exports = {
 					},
 				},
 			},
-		},
-		animation: {
-			fade: 'fade .5s easy-in-out',
-			scaleIn: 'scaleIn .35s easy-in-out',
+			animation: {
+				fade: 'fade .5s ease-in-out',
+				scaleIn: 'scaleIn 0.35s ease-in-out',
+			},
 		},
 	},
 	plugins: [
