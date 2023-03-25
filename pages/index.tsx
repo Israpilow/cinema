@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 		const slides: ISlide[] = movies.slice(0, 3).map((m) => ({
 			_id: m._id,
-			link: getMoviesUrl(`/${m.slug}`),
+			link: getMovieUrl(m.slug),
 			bigPoster: m.bigPoster,
 			subTitle: getGenresList(m.genres),
 			title: m.title,

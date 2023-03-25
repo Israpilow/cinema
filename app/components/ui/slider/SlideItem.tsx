@@ -11,7 +11,6 @@ interface ISlideItem {
 }
 const SlideItem: FC<ISlideItem> = ({ slide, buttonTitle = 'Watch' }) => {
 	const { push } = useRouter()
-	console.log(slide.link)
 	return (
 		<div className={styles.slide}>
 			{slide.bigPoster && (

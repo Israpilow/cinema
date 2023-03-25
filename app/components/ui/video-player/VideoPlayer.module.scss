@@ -1,0 +1,90 @@
+.wrapper {
+  @apply mt-12 rounded-2xl overflow-hidden shadow-xl relative animate-fade;
+
+  .controls {
+    @apply flex justify-between absolute bottom-3 left-6 right-6;
+
+    > div:first-child {
+      @apply flex-center-between;
+
+      > button {
+        @apply text-2xl text-white mr-3 outline-none opacity-60 hover:opacity-100 transition-opacity;
+      }
+
+      .playButton {
+        @apply text-4xl;
+      }
+
+      .timeControls {
+        @apply flex items-center text-white ml-4 opacity-60;
+
+        > p:nth-child(2) {
+          @apply mx-2;
+        }
+      }
+    }
+
+    > div:last-child {
+      @apply flex items-center;
+
+      > button {
+        @apply text-white text-3xl outline-none opacity-20 cursor-auto transition-opacity;
+      }
+    }
+  }
+
+  .iconPlay {
+    @apply absolute top-0 left-0 w-full h-full flex items-center justify-center;
+
+    > svg {
+      @apply w-24 h-24 text-primary;
+    }
+  }
+
+  .progressBarContainer {
+    @apply absolute left-4 right-4 bottom-14 bg-gray-600 rounded-layout h-1 hover:h-2 cursor-pointer transition-all;
+    width: calc(100% - 2rem);
+
+    .progressBar {
+      @apply rounded-2xl h-full bg-primary absolute top-0 z-1;
+    }
+
+    .bufferProgressBar {
+      @apply rounded-2xl h-full bg-gray-300 opacity-50 absolute top-0 z-0;
+    }
+  }
+/*  video::-webkit-media-controls {
+    display:none !important;
+  }
+
+  video::-webkit-media-controls-enclosure {
+    display:none !important;
+  }
+
+  video::-webkit-media-controls-overlay-play-button {
+    display:none !important;
+  }
+
+  video::-webkit-media-controls-start-playback-button {
+    display:none !important;
+  }
+
+  video::-webkit-media-controls-current-time-display {
+    display:none !important;
+  }
+
+  video::-webkit-media-controls-time-remaining-display {
+    display:none !important;
+  }
+
+  video::-webkit-media-controls-volume-slider {
+    display:none !important;
+  }
+
+  video::-webkit-media-controls-mute-button {
+    display:none !important;
+  }
+  video::backdrop {
+    display:none !important;
+  }*/
+}
