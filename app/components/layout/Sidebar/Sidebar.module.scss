@@ -1,3 +1,6 @@
 .sidebar {
-  @apply p-layout;
+  @apply p-layout overflow-y-auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
