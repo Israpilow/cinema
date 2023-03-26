@@ -29,7 +29,7 @@ export const useVideo = () => {
 		}
 	}, [isPlaying])
 
-	const toggleVolume = () => {
+	const toggleVolume = useCallback(() => {
 		const video = videoRef.current
 		if (!video) return
 
@@ -40,7 +40,7 @@ export const useVideo = () => {
 			video.volume = 1
 			setIsVolume(true)
 		}
-	}
+	}, [isVolume])
 
 	const forward = () => {
 		if (videoRef.current) videoRef.current.currentTime += 10
