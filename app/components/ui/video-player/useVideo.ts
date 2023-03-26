@@ -7,12 +7,14 @@ export const useVideo = () => {
 	const bufferRef = useRef<HTMLDivElement>(null)
 	const fullScreenRef = useRef<HTMLButtonElement>(null)
 	const controlsRef = useRef<HTMLDivElement>(null)
+	const wrapperRef = useRef<HTMLDivElement>(null)
 
 	const [isPlaying, setIsPlaying] = useState(false)
 	const [currentTime, setCurrentTime] = useState(0)
 	const [videoTime, setVideoTime] = useState(0)
 	const [progress, setProgress] = useState(0)
 	const [isVolume, setIsVolume] = useState(true)
+	const [isControls, setIsControls] = useState(false)
 
 	const currentSecond = 8
 	const isPlayCircle = currentSecond === currentTime
@@ -91,6 +93,25 @@ export const useVideo = () => {
 	}, [videoRef.current?.duration])
 
 	useEffect(() => {
+		const wrapper = wrapperRef.current
+
+		if (!wrapper) return
+
+		const showControls = () => setIsControls(true)
+		const hideControls = () => {
+			if (!videoRef?.current?.paused) setIsControls(false)
+		}
+
+		wrapper.addEventListener('mouseenter', showControls)
+		wrapper.addEventListener('mouseleave', hideControls)
+
+		return () => {
+			wrapper.removeEventListener('mouseenter', showControls)
+			wrapper.removeEventListener('mouseleave', hideControls)
+		}
+	}, [wrapperRef.current])
+
+	useEffect(() => {
 		const video = videoRef.current
 		if (!video) return
 		const updateBuffer = () => {
@@ -102,6 +123,7 @@ export const useVideo = () => {
 				bufferRef.current!.style.width = (bufferedEnd / duration) * 100 + '%'
 			}
 		}
+
 		video.addEventListener('loadeddata', updateBuffer)
 		video.addEventListener('progress', updateBuffer)
 		video.addEventListener('timeupdate', updateBuffer)
@@ -180,6 +202,7 @@ export const useVideo = () => {
 			bufferRef,
 			fullScreenRef,
 			controlsRef,
+			wrapperRef,
 			actions: {
 				fullScreen,
 				revert,
@@ -196,6 +219,7 @@ export const useVideo = () => {
 				isVolume,
 				currentSecond,
 				isPlayCircle,
+				isControls,
 			},
 		}),
 		[

@@ -53,3 +53,19 @@ input:focus {
   transform: scale(0.9);
   transition: opacity 300ms, transform 300ms;
 }
+
+.controls-animation-enter {
+  opacity: 0;
+}
+.controls-animation-enter-active {
+  opacity:1;
+  transition: opacity 300ms, transform 400ms;
+}
+.controls-animation-exit {
+  opacity: 1;
+}
+
+.controls-animation-exit-active {
+  opacity: 0;
+  transition: opacity 300ms, transform 400ms;
+}
