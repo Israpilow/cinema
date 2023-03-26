@@ -1,5 +1,6 @@
 import axios, { AxiosClassic } from '../api/interceptors'
 import { IGenreEditInput } from '../components/screens/admin/genre/genre-edit.interface'
+import { ICollection } from '../components/screens/collections/collections.interface'
 import { getGenresUrl, getMoviesUrl } from '../config/api.config'
 import { IGenre } from '../shared/types/movies.types'
 
@@ -9,7 +10,9 @@ export const GenreService = {
 			params: searchTerm ? { searchTerm } : {},
 		})
 	},
-
+	async getCollections() {
+		return await AxiosClassic.get<ICollection[]>(getGenresUrl(`/collections`))
+	},
 	async getBySlug(slug: string) {
 		return await AxiosClassic.get<IGenre>(getGenresUrl(`/by-slug/${slug}`))
 	},
