@@ -52,12 +52,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		const { data: genre } = await GenreService.getBySlug(String(params?.slug))
 
 		const { data: movies } = await MovieService.getByGenres([genre._id])
-		console.log(genre)
 		return {
 			props: {
 				movies,
 				genre,
 			},
+			revalidate: 60,
 		}
 	} catch (e) {
 		return {

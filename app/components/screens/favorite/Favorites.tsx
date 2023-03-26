@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { useAuth } from '../../../hooks/useAuth'
 import Meta from '../../../utils/meta/Meta'
 import SkeletonLoader from '../../ui/SkeletonLoader'
 import Heading from '../../ui/heading/Heading'
@@ -10,6 +11,8 @@ import { useFavorite } from './useFavorite'
 
 const Favorites: FC = () => {
 	const { isLoading, favoritesMovies } = useFavorite()
+	const { user } = useAuth()
+	if (!user) return null
 	return (
 		<Meta title="Favorite">
 			<Heading title="Favorites" />

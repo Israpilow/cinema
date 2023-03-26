@@ -11,7 +11,7 @@ import styles from './Profile.module.scss'
 import { IProfileInput } from './profile.interface'
 import { useProfile } from './useProfile'
 
-const Profile: FC<IProfileInput> = ({ email, password }) => {
+const Profile: FC = () => {
 	const { handleSubmit, register, formState, setValue } =
 		useForm<IProfileInput>({
 			mode: 'onChange',

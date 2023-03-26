@@ -17,8 +17,10 @@ const HeadProvider: FC<{ children: ReactElement }> = ({ children }) => {
 			/>
 			<Head>
 				<meta charSet="UTF-8" />
-				<meta name="viewport" />
-				<meta content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1, maximum-scale=5"
+				/>
 
 				<FavIcons />
 				<meta name="theme-color" content={'#181B1E'} />
@@ -27,6 +29,7 @@ const HeadProvider: FC<{ children: ReactElement }> = ({ children }) => {
 					name="apple-mobile-web-app-status-bar-style"
 					content={'#181B1E'}
 				/>
+				<link rel="manifest" href="/manifest.json" />
 			</Head>
 			{children}
 		</>

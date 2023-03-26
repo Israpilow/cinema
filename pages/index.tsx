@@ -4,8 +4,7 @@ import Home from '../app/components/screens/home/Home'
 import { IHome } from '../app/components/screens/home/home.interface'
 import { IGalleryItem } from '../app/components/ui/gallery/gallery.interface'
 import { ISlide } from '../app/components/ui/slider/slider.interace'
-import { getActorsUrl, getMoviesUrl } from '../app/config/api.config'
-import { getActorUrl, getAdminUrl, getMovieUrl } from '../app/config/url.config'
+import { getActorUrl, getMovieUrl } from '../app/config/url.config'
 import { ActorService } from '../app/services/actor.service'
 import { MovieService } from '../app/services/movie.service'
 import { getGenresList } from '../app/utils/movie/getGenresListEach'
@@ -15,6 +14,7 @@ const HomePage: NextPage<IHome> = ({ slides, actors, trendingMovies }) => {
 		<Home slides={slides} trendingMovies={trendingMovies} actors={actors} />
 	)
 }
+
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -57,6 +57,7 @@ export const getStaticProps: GetStaticProps = async () => {
 				trendingMovies,
 				actors,
 			} as IHome,
+			revalidate: 60,
 		}
 	} catch (error) {
 		return {

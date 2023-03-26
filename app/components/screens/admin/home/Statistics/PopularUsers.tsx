@@ -30,6 +30,7 @@ const PopularUsers: FC = () => {
 						<h3>Opened {movie.countOpened} times</h3>
 						<Link href={getMoviesUrl(movie.slug)}>
 							<Image
+								sizes="100vw"
 								src={movie.bigPoster}
 								alt={movie.title}
 								width={285}

@@ -8,10 +8,11 @@ const Banner: FC<IBanner> = ({ image, Detail }) => {
 	return (
 		<div className={styles.banner}>
 			<Image
+				sizes="100vw"
 				src={image}
 				alt=""
 				draggable={false}
-				layout="fill"
+				fill
 				className="image-like-bg"
 				unoptimized
 				priority

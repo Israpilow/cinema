@@ -6,7 +6,7 @@ import Field from '../../ui/form-elements/Filed'
 
 interface IAuthFields {
 	register: UseFormRegister<any>
-	formState: FormState<any>
+	formState: any
 	isPasswordRequired?: boolean
 }
 

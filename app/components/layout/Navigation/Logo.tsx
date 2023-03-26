@@ -7,7 +7,15 @@ import logo from '../../../assets/images/logo.svg'
 const Logo: FC = () => {
 	return (
 		<Link href="/" className="px-layout mb-10 block">
-			<Image src={logo} width="247" height="34" alt="logo" draggable={false} />
+			<Image
+				src={logo}
+				width="0"
+				height="0"
+				sizes="100vw"
+				style={{ width: '100%', height: 'auto' }}
+				alt="logo"
+				draggable={false}
+			/>
 		</Link>
 	)
 }

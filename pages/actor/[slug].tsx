@@ -12,7 +12,6 @@ interface IActorPage {
 }
 
 const ActorPage: NextPage<IActorPage> = ({ movies, actor }) => {
-	console.log(movies)
 	return actor ? (
 		<Catalog movies={movies || []} title={actor.name} />
 	) : (
@@ -54,6 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 				movies,
 				actor,
 			},
+			revalidate: 60,
 		}
 	} catch (e) {
 		return {

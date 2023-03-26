@@ -15,6 +15,9 @@ const MovieItem: FC<{ movie: IMovie }> = ({ movie }) => {
 		<div className={styles.item}>
 			<Link href={getMovieUrl(movie.slug)}>
 				<Image
+					sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
 					src={movie.poster}
 					alt={movie.title}
 					width={65}

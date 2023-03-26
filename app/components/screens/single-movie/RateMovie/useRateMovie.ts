@@ -3,12 +3,14 @@ import { SubmitHandler } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
+import { useAuth } from '../../../../hooks/useAuth'
 import { RatingService } from '../../../../services/rating.service'
 import { toastrError } from '../../../../utils/toastr-error'
 
 export const useRateMovie = (movieId: string) => {
 	const [rating, setRating] = useState(0)
 	const [isSended, setIsSended] = useState(false)
+	const { user } = useAuth()
 
 	const { refetch } = useQuery(
 		['your movie rating', movieId],
@@ -20,7 +22,7 @@ export const useRateMovie = (movieId: string) => {
 			onError: (error) => {
 				toastrError(error, 'Get rating')
 			},
-			enabled: !!movieId,
+			enabled: !!movieId && !!user,
 		}
 	)
 

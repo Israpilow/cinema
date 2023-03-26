@@ -154,17 +154,6 @@ export const useVideo = () => {
 		}
 	}, [videoTime])
 
-	/*
-	useEffect(() => {
-		if (isPlaying) setIsPlaying(false)
-	}, [videoTime])
-
-	useEffect(() => {
-		const endProgress = 100
-		if (progress === endProgress) setIsPlaying(false)
-	}, [progress])
-*/
-
 	useEffect(() => {
 		const handleKeyDown = (e: KeyboardEvent) => {
 			switch (e.key) {
