@@ -28,11 +28,9 @@ export const UserService = {
 	async update(_id: string, data: IProfileInput) {
 		return axios.put<string>(getUsersUrl(`/${_id}`), data)
 	},
-
 	async create() {
-		return axios.post<string>(getUsersUrl('/'))
+		return axios.post<string>(getUsersUrl(''))
 	},
-
 	async delete(_id: string) {
 		return axios.delete<string>(getUsersUrl(`/${_id}`))
 	},

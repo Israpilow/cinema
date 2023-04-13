@@ -57,7 +57,7 @@ export const useUsers = () => {
 			},
 			onSuccess: ({ data: _id }) => {
 				toastr.success('Create user', 'create was successful')
-				push(getAdminUrl(`user/movie/${_id}`))
+				push(getAdminUrl(`user/edit/${_id}`))
 			},
 		}
 	)

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { useQuery } from 'react-query'
 
-import { getMoviesUrl } from '../../../../../config/api.config'
+import { getMovieUrl } from '../../../../../config/url.config'
 import { MovieService } from '../../../../../services/movie.service'
 import { IMovie } from '../../../../../shared/types/movies.types'
 import SkeletonLoader from '../../../../ui/SkeletonLoader'
@@ -28,7 +28,7 @@ const PopularUsers: FC = () => {
 				movie && (
 					<>
 						<h3>Opened {movie.countOpened} times</h3>
-						<Link href={getMoviesUrl(movie.slug)}>
+						<Link href={getMovieUrl(movie.slug)}>
 							<Image
 								sizes="100vw"
 								src={movie.bigPoster}

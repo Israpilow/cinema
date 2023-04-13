@@ -23,10 +23,12 @@ const Favorites: FC = () => {
 						className={styles.skeletonLoader}
 						containerClassName={styles.containerLoader}
 					/>
-				) : (
+				) : favoritesMovies ? (
 					favoritesMovies?.map((movie) => (
 						<FavoritesItem key={movie._id} movie={movie} />
 					))
+				) : (
+					<div>your don't have favorites</div>
 				)}
 			</section>
 		</Meta>

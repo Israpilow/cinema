@@ -17,12 +17,14 @@ const FavoriteMovies: FC = () => {
 		<div className="mt-11">
 			<SkeletonLoader count={3} className="h-28 mb-4" />
 		</div>
-	) : (
+	) : favoritesMovies?.length ? (
 		<MovieList
 			title="Favorites"
 			link="/favorites"
 			movies={favoritesMovies?.slice(0, 3) || []}
 		/>
+	) : (
+		<div>your don't have favorites</div>
 	)
 }
 
