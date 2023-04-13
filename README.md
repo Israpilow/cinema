@@ -10,18 +10,26 @@
 - Кастомный слайдер
 - Множество страниц: фильмов, жанров, актеров и т.д.
 
-<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/home.png" target="_blank">
-  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/home.png" width="1400"/>
+<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/home.jpg" target="_blank">
+  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/home.jpg" width="1400"/>
 </a>
 
-<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/movie-page.png" target="_blank">
-  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/movie-page.png" width="1400"/>
+<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/movie.jpg" target="_blank">
+  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/movie.jpg" width="1400"/>
 </a>
 
-<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin-stat.png" target="_blank">
-  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin-stat.png" width="1400"/>
+<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin_panel_movies_edit.jpg" target="_blank">
+  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin_panel_movies_edit.jpg" width="1400"/>
 </a>
 
-<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin-edit.png" target="_blank">
-  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin-edit.png" width="1400"/>
+<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/auth.jpg" target="_blank">
+  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/auth.jpg" width="1400"/>
+</a>
+
+<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin_panel_statistics.jpg" target="_blank">
+  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin_panel_statistics.jpg" width="1400"/>
+</a>
+
+<a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin_panel_movies.jpg" target="_blank">
+  <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/admin_panel_movies.jpg" width="1400"/>
 </a>
