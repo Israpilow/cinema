@@ -13,8 +13,9 @@ module.exports = {
 				destination: process.env.REACT_APP_SERVER_URL + '/api/:path*',
 			},
 			{
-				source: '/uploads/:path*',
-				destination: process.env.REACT_APP_SERVER_URL + '/uploads/:path*',
+				source: '/public/uploads/:path*',
+				destination:
+					process.env.REACT_APP_SERVER_URL + '/public/uploads/:path*',
 			},
 		]
 	},
