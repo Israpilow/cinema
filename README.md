@@ -1,4 +1,4 @@
-##Разработка клиентской части клона Netflix (Онлайн кинотеатра)
+#Разработка клиентской части клона Netflix (Онлайн кинотеатра)
 
 Пример можно посмотреть тут: <a href="https://cinema-m9o3hwk5x-israpilow.vercel.app/" target="_blank">Online Cinema</a> 
 
