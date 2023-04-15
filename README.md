@@ -1,4 +1,5 @@
 ##Разработка клиентской части клона Netflix (Онлайн кинотеатра)
+
 Пример можно посмотреть тут: <a href="https://cinema-m9o3hwk5x-israpilow.vercel.app/" target="_blank">Online Cinema</a> 
 
 Стэк: TS, Next.js, Redux Toolkit, React Query, TailwindCss, React Select, Ract Hook Form, Draft js и т.д.
