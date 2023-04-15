@@ -1,8 +1,9 @@
+import fs from 'fs'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import path from 'path'
 
 import Error404 from '../404'
 import SingleMovie from '../../app/components/screens/single-movie/SingleMovie'
-import Catalog from '../../app/components/ui/catalog-movies/Catalog'
 import { IGalleryItem } from '../../app/components/ui/gallery/gallery.interface'
 import { getMovieUrl } from '../../app/config/url.config'
 import { MovieService } from '../../app/services/movie.service'
@@ -11,11 +12,16 @@ import { IMovie } from '../../app/shared/types/movies.types'
 export interface IMoviePage {
 	similarMovie: IGalleryItem[]
 	movie: IMovie
+	movieUrl: string | null
 }
 
-const MoviePage: NextPage<IMoviePage> = ({ similarMovie, movie }) => {
+const MoviePage: NextPage<IMoviePage> = ({ similarMovie, movie, movieUrl }) => {
 	return movie ? (
-		<SingleMovie similarMovie={similarMovie || []} movie={movie} />
+		<SingleMovie
+			similarMovie={similarMovie || []}
+			movie={movie}
+			movieUrl={movieUrl}
+		/>
 	) : (
 		<Error404 />
 	)
@@ -48,6 +54,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	try {
 		const { data: movie } = await MovieService.getBySlug(String(params?.slug))
+		const videoPath = path.join(
+			`${process.env.APP_SERVER_URL}/api`,
+			movie.videoUrl
+		)
 
 		const { data: dataSimilarMovie } = await MovieService.getByGenres(
 			movie.genres.map((g) => g._id)
@@ -61,12 +71,24 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 				link: getMovieUrl(g.slug),
 			}))
 
-		return {
-			props: {
-				similarMovie,
-				movie,
-			},
-			revalidate: 60,
+		if (!fs.existsSync(videoPath)) {
+			return {
+				props: {
+					similarMovie,
+					movie,
+					movieUrl: null,
+				},
+				revalidate: 60,
+			}
+		} else {
+			return {
+				props: {
+					similarMovie,
+					movie,
+					movieUrl: movie.videoUrl,
+				},
+				revalidate: 60,
+			}
 		}
 	} catch (e) {
 		return {

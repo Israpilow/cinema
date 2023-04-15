@@ -21,7 +21,7 @@ const DynamicRateMovie = dynamic(() => import('./RateMovie/RateMovie'), {
 	ssr: false,
 })
 
-const SingleMovie: FC<IMoviePage> = ({ similarMovie, movie }) => {
+const SingleMovie: FC<IMoviePage> = ({ similarMovie, movie, movieUrl }) => {
 	useUpdateCountOpened(movie.slug)
 
 	return (
@@ -31,7 +31,7 @@ const SingleMovie: FC<IMoviePage> = ({ similarMovie, movie }) => {
 				Detail={() => <Content movie={movie} />}
 			/>
 
-			<DynamicPlayer slug={movie?.slug} videoSource={movie?.videoUrl} />
+			<DynamicPlayer slug={movie?.slug} videoSource={movieUrl} />
 
 			<div className="mt-12">
 				<SubHeading title="Similar" />

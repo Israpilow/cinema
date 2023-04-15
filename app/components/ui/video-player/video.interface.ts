@@ -1,5 +1,5 @@
 export interface IVideoPlayer {
-	videoSource: string
+	videoSource: string | null
 	slug: string
 }
 

@@ -16,7 +16,7 @@ export const useVideo = () => {
 	const [isVolume, setIsVolume] = useState(true)
 	const [isControls, setIsControls] = useState(false)
 
-	const currentSecond = 8
+	const currentSecond = 0
 	const isPlayCircle = currentSecond === currentTime
 
 	const toggleVideo = useCallback(() => {
