@@ -22,8 +22,8 @@ const VideoPlayer: FC<IVideoPlayer> = ({ slug, videoSource }) => {
 			ref={wrapperRef}
 		>
 			<>
-				{videoSource ? (
-					user ? (
+				{user ? (
+					videoSource ? (
 						<>
 							<video
 								ref={videoRef}
@@ -111,10 +111,10 @@ const VideoPlayer: FC<IVideoPlayer> = ({ slug, videoSource }) => {
 							)}
 						</>
 					) : (
-						<AuthPlaceholder slug={slug} />
+						<AuthPlaceholder text="Expect video to be added soon" />
 					)
 				) : (
-					<AuthPlaceholder text="Expect video to be added soon" />
+					<AuthPlaceholder slug={slug} />
 				)}
 			</>
 		</div>
