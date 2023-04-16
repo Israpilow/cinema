@@ -1,6 +1,4 @@
-## Разработка Онлайн кинотеатра
-
-Пример можно посмотреть тут: <a href="https://cinema-pearl.vercel.app/" target="_blank">Online Cinema</a>
+## Разработка Онлайн кинотеатра <a href="https://cinema-pearl.vercel.app/" target="_blank">Online Cinema</a>
 
 Пользователь с доступом к админке:
   - Email:    test3@test.ru
