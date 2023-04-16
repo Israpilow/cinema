@@ -13,17 +13,17 @@ import { IVideoPlayer } from './video.interface'
 const VideoPlayer: FC<IVideoPlayer> = ({ slug, videoSource }) => {
 	const { actions, video, videoRef, bufferRef, wrapperRef } = useVideo()
 	const { user } = useAuth()
-
+	const isVideo = videoSource?.includes('.mp4')
 	return (
 		<div
 			className={cn(styles.wrapper, {
-				'h-96': !user || !videoSource,
+				'h-96': !user || !isVideo,
 			})}
 			ref={wrapperRef}
 		>
 			<>
 				{user ? (
-					videoSource ? (
+					isVideo ? (
 						<>
 							<video
 								ref={videoRef}

@@ -20,8 +20,7 @@ export default Home
 export const getStaticProps: GetStaticProps = async () => {
 	try {
 		const { data: movies } = await MovieService.getAll()
-
-		const slides: ISlide[] = movies.slice(0, 3).map((m) => ({
+		const slides: ISlide[] = movies.slice(2, 5).map((m) => ({
 			_id: m._id,
 			link: getMovieUrl(m.slug),
 			bigPoster: m.bigPoster,

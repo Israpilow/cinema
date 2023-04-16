@@ -12,16 +12,11 @@ import { IMovie } from '../../app/shared/types/movies.types'
 export interface IMoviePage {
 	similarMovie: IGalleryItem[]
 	movie: IMovie
-	movieUrl: string | null
 }
 
-const MoviePage: NextPage<IMoviePage> = ({ similarMovie, movie, movieUrl }) => {
+const MoviePage: NextPage<IMoviePage> = ({ similarMovie, movie }) => {
 	return movie ? (
-		<SingleMovie
-			similarMovie={similarMovie || []}
-			movie={movie}
-			movieUrl={movieUrl}
-		/>
+		<SingleMovie similarMovie={similarMovie || []} movie={movie} />
 	) : (
 		<Error404 />
 	)
@@ -54,15 +49,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	try {
 		const { data: movie } = await MovieService.getBySlug(String(params?.slug))
-		const videoPath = path.join(
-			`${process.env.APP_SERVER_URL}/api`,
-			movie.videoUrl
-		)
-
 		const { data: dataSimilarMovie } = await MovieService.getByGenres(
 			movie.genres.map((g) => g._id)
 		)
-
 		const similarMovie = dataSimilarMovie
 			.filter((m) => m._id !== movie._id)
 			.map((g) => ({
@@ -71,24 +60,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 				link: getMovieUrl(g.slug),
 			}))
 
-		if (!fs.existsSync(videoPath)) {
-			return {
-				props: {
-					similarMovie,
-					movie,
-					movieUrl: null,
-				},
-				revalidate: 60,
-			}
-		} else {
-			return {
-				props: {
-					similarMovie,
-					movie,
-					movieUrl: movie.videoUrl,
-				},
-				revalidate: 60,
-			}
+		return {
+			props: {
+				similarMovie,
+				movie,
+			},
+			revalidate: 60,
 		}
 	} catch (e) {
 		return {
