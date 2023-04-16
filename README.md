@@ -1,4 +1,4 @@
-#Разработка Онлайн кинотеатра
+## Разработка Онлайн кинотеатра
 
 Пример можно посмотреть тут: <a href="https://cinema-pearl.vercel.app/" target="_blank">Online Cinema</a>
 
@@ -12,7 +12,7 @@
 
 Стек технологий: Next.js, React, TypeScript, Redux Toolkit, React Query, Draft.js, React Select, React Hook Form, Tailwind, SCSS, Axios.
 
-Что реализовано:
+## Что реализовано:
   - Aвторизация средней сложности
   - Внедрил Redux Toolkit в проект
   - Разработал админ панель
