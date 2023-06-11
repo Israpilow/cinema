@@ -121,6 +121,14 @@ const MovieEdit: FC = () => {
 									required: 'Please select at least one actors!',
 								}}
 							/>
+							<Field
+								{...register('videoUrl', {
+									required: 'Video Url is required!',
+								})}
+								placeholder="Video Url"
+								error={errors.parameters?.year}
+								style={{ width: '100%' }}
+							/>
 							<Controller
 								control={control}
 								name="poster"
@@ -128,15 +136,18 @@ const MovieEdit: FC = () => {
 								render={({
 									field: { value, onChange },
 									fieldState: { error },
-								}) => (
-									<UploadField
-										onChange={onChange}
-										value={value}
-										error={error}
-										folder="movies"
-										placeholder="Poster"
-									/>
-								)}
+								}) => {
+									console.log(value)
+									return (
+										<UploadField
+											onChange={onChange}
+											value={value}
+											error={error}
+											folder="movies"
+											placeholder="Poster"
+										/>
+									)
+								}}
 								rules={{
 									required: 'Poster is required',
 								}}
@@ -161,7 +172,7 @@ const MovieEdit: FC = () => {
 									required: 'Big poster is required',
 								}}
 							/>
-							<Controller
+							{/*							<Controller
 								control={control}
 								name="videoUrl"
 								defaultValue=""
@@ -182,7 +193,7 @@ const MovieEdit: FC = () => {
 								rules={{
 									required: 'Video is required',
 								}}
-							/>
+							/>*/}
 						</div>
 						<Button>Update</Button>
 					</>
