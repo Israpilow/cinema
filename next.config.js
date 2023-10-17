@@ -6,6 +6,10 @@ module.exports = {
 		APP_ENV: process.env.REACT_APP_ENV,
 		APP_SERVER_URL: process.env.REACT_APP_SERVER_URL,
 	},
+	images: {
+		domains: ['res.cloudinary.com'],
+		unoptimized: true,
+	},
 	async rewrites() {
 		return [
 			{
