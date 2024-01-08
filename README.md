@@ -14,7 +14,10 @@
   - Интегрировал react hook form
   - Разработал текстовый редактор на Draft.js
   - Кастомизировал react select
-
+    
+## Что не реализовано:
+  - Мобильная версия сайта
+    
 <a href="https://raw.githubusercontent.com/Israpilow/cinema/main/design/home.jpg" target="_blank">
   <img src="https://raw.githubusercontent.com/Israpilow/cinema/main/design/home.jpg" width="1400"/>
 </a>
