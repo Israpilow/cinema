@@ -2,7 +2,7 @@
 
 Пользователь с доступом к админке:
   - Email:    test1@test.ru
-  - Password: Qwerty123
+  - Password: qwerty
 
 Стек технологий: Next.js, React, TypeScript, Redux Toolkit, React Query, Draft.js, React Select, React Hook Form, Tailwind, SCSS, Axios.
 
